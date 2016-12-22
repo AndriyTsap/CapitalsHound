@@ -74,7 +74,7 @@ export class AppComponent {
                     avoidTolls: true
                 };
 
-                directionsService.route(request, function(result, status) {
+                directionsService.route(request, (result: any, status: any) => {
                     if (status == google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setDirections(result);
                         var routes = result.routes;
@@ -93,7 +93,7 @@ export class AppComponent {
                
     }
 
-    handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    handleLocationError(browserHasGeolocation: any, infoWindow: any, pos: any) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                                 'Error: The Geolocation service failed.' :
